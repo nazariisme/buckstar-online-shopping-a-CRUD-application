@@ -1,0 +1,25 @@
+<%- include("./../partials/header.ejs") %>
+<h2>Tillgängliga Produkter:</h2>
+<form method="post">
+<table>
+    <th>Namn</th>
+    <th>Beskrivning</th>
+    <th>Pris</th>
+    <th>Lager Status</th>
+    <th>Antal</th>
+    <% for (const row of showProducts) { %>
+        <tr>
+            <td><%= row.Namn %></td>
+            <td><%= row.Beskrivning %></td>
+            <td><%= row.Pris %></td>
+            <td><%= row.Antal %></td>
+            <td><label>Produktkod:</label>
+                <input type="text" name="p_produktkod" value=<%= row.Produktkod %> readonly>
+                <input type="number" name="p_antal" min="0" max=<%= row.Antal %> placeholder="0">
+            </td>
+        </tr>
+    <% } %>
+</table>
+<input type="submit" value="Slutför Beställningen">
+</form>
+<%- include("./../partials/footer.ejs") %>

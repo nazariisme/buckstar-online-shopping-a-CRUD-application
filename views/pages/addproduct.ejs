@@ -1,0 +1,14 @@
+<%- include("./../partials/header.ejs") %>
+<h2>Lägg till produkt</h2>
+
+<form method="post">
+    <span class="label success">Name</span>
+    <input type="text" name="p_namn" required>
+    <span class="label success">Beskrivning</span>
+    <input type="text" name="p_beskrivning" required>
+    <span class="label success">Pris</span>
+    <input type="number" name="p_pris" required>
+    <input type="submit" value="Lägg till">
+</form>
+
+<%- include("./../partials/footer.ejs") %>

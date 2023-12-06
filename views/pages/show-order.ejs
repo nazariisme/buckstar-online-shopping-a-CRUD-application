@@ -1,0 +1,26 @@
+<%- include("./../partials/header.ejs") %>
+<h3>Beställningsinfromation:</h3>
+<p>Order Nr: <%= orderid%></p>
+<p>Order Status: <%= orderStatus%></p>
+<h3>Beställare:</h3>
+<p>Kund ID: <%= kundInformation[0].ID %></p>
+<p>Namn: <%= kundInformation[0].Namn %></p>
+<p>Adress: <%= kundInformation[0].Adress %></p>
+<p>Telefonnummer: <%= kundInformation[0].Telefonnummer %></p>
+<table>
+    <th>Produktkod</th>
+    <th>Namn</th>
+    <th>Beskrivning</th>
+    <th>Pris</th>
+    <th>Antal</th>
+    <% for (const row of orderInformation) { %>
+        <tr>
+            <td><%= row.produktkod %></td>
+            <td><%= row.namn %></td>
+            <td><%= row.beskrivning %></td>
+            <td><%= row.pris %></td>
+            <td><%= row.antal %></td>
+        </tr>
+    <% } %>
+</table>
+<%- include("./../partials/footer.ejs") %>

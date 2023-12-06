@@ -1,0 +1,26 @@
+<%- include("./../partials/header.ejs") %>
+<h2>Tillgängliga Produkter:</h2>
+<table>
+    <th>Produktkod</th>
+    <th>Namn</th>
+    <th>Beskrivning</th>
+    <th>Pris</th>
+    <th>Antal</th>
+    <th>Kategori</th>
+    <th>Redigera</th>
+    <% for (const row of showProducts) { %>
+        <tr>
+            <td><%= row.Produktkod %></td> 
+            <td><%= row.Namn %></td>
+            <td><%= row.Beskrivning %></td>
+            <td><%= row.Pris %></td>
+            <td><%= row.Antal %></td>
+            <td><%= row.Kategori %></td>
+            <td>
+                <a href="/eshop/update/<%= row.Produktkod %>">Updatera</a> |
+                <a href="/eshop/delete/<%= row.Produktkod %>">Radera</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<%- include("./../partials/footer.ejs") %>

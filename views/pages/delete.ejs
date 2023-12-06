@@ -1,0 +1,19 @@
+<%- include("./../partials/header.ejs") %>
+<div class="container">
+    <h1>Radera produkt</h1>
+
+    <form method="post">
+        <% for (const row of product) { %>
+            <label>Produktkod:</label>
+            <input type="text" name="p_produktkod" value="<%= row.produktkod %>" readonly>
+            <label>Namn:</label>
+            <input type="text" name="p_namn" value="<%= row.namn %>"readonly>
+            <label>Beskrivning:</label>
+            <input type="text" name="p_beskrivning" value="<%= row.beskrivning %>"readonly>
+            <label>Pris</label>
+            <input type="number" name="p_pris" value="<%= row.pris %>"readonly>
+            <input type="submit" value="Radera">
+        <% } %>
+    </form>
+</div>
+<%- include("./../partials/footer.ejs") %>

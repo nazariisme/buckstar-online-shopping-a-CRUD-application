@@ -1,0 +1,11 @@
+<%- include("./../partials/header.ejs") %>
+<h2>Tillgängliga kategorier:</h2>
+<table>
+    <th>Kategori</th>
+    <% for (const row of showCategory) { %>
+        <tr>
+            <td><%= row.kategorinamn %></td>
+        </tr>
+    <% } %>
+</table>
+<%- include("./../partials/footer.ejs") %>

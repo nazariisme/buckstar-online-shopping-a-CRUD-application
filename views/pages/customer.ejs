@@ -1,0 +1,20 @@
+<%- include("./../partials/header.ejs") %>
+<table>
+    <th>ID</th>
+    <th>Namn</th>
+    <th>Adress</th>
+    <th>Telefon</th>
+    <th>Skapa Beställning</th>
+    <% for (const row of showCustomer) { %>
+        <tr>
+            <td><%= row.ID %></td> 
+            <td><%= row.Namn %></td>
+            <td><%= row.Adress %></td>
+            <td><%= row.Telefonnummer %></td>
+            <td>
+                <a href="/eshop/order-manager/<%= row.ID %>">Skapa Order</a> 
+            </td>
+        </tr>
+    <% } %>
+</table>
+<%- include("./../partials/footer.ejs") %>

@@ -1,0 +1,30 @@
+<%- include("./../partials/header.ejs") %>
+<h2>Beställningar:</h2>
+<table>
+    <th>Order ID</th>
+    <th>Kund ID</th>
+    <th>Namn</th>
+    <th>Datum</th>
+    <th>Order Rader</th>
+    <th>Status</th>
+    <th>Beställa</th>
+    <th>Order Information</th>
+    <% for (const row of showOrder) { %>
+        <tr>
+            <td><a ><%= row.orderid %></a></td> 
+            <td><%= row.kundid %></td>
+            <td><%= row.namn %></td>
+            <td><%= row.datum %></td>
+            <td><%= row.antal %></td>
+            <td><%= row.status %></td>
+            <td>
+                <a href="/eshop/choose-products/<%= row.orderid%>/<%= row.kundid %>">Beställa</a>
+            </td>
+            <td>
+                <a href="/eshop/show-order/<%= row.orderid %>">Visa</a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+<p id="submission"><a href="/eshop/customer" style="color: green;">Kunder</a></p>
+<%- include("./../partials/footer.ejs") %>
